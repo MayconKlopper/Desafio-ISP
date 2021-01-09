@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "2C2YE1WzeaKdEOETP50W0dlbt7hB1YP5JnDjDy5ddUlK2qlBwy3EXGYQ0QcewB7TxhEXfP+T/WsCunM/A/TdJg==",
+  "success": true,
+  "projectFilePath": "C:\\projetos\\ISPSystem\\ISPSystem\\ISPSystem.EF\\ISPSystem.EF.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\mayconcarvalho\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\mayconcarvalho\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
