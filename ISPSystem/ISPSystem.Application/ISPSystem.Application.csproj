@@ -4,4 +4,18 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ISPSystem.DomainEntities\ISPSystem.DomainEntities.csproj" />
+    <ProjectReference Include="..\ISPSystem.Domain\ISPSystem.Domain.csproj" />
+    <ProjectReference Include="..\ISPSystem.EF\ISPSystem.EF.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Services\" />
+  </ItemGroup>
+
 </Project>

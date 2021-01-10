@@ -25,6 +25,16 @@
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
+      },
+      "ISPSystem.DomainEntities/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/ISPSystem.DomainEntities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ISPSystem.DomainEntities.dll": {}
+        }
       }
     }
   },
@@ -172,10 +182,16 @@
         "netstandard.library.2.0.3.nupkg.sha512",
         "netstandard.library.nuspec"
       ]
+    },
+    "ISPSystem.DomainEntities/1.0.0": {
+      "type": "project",
+      "path": "../ISPSystem.DomainEntities/ISPSystem.DomainEntities.csproj",
+      "msbuildProject": "../ISPSystem.DomainEntities/ISPSystem.DomainEntities.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
+      "ISPSystem.DomainEntities >= 1.0.0",
       "NETStandard.Library >= 2.0.3"
     ]
   },
@@ -209,7 +225,11 @@
       },
       "frameworks": {
         "netstandard2.0": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\projetos\\ISPSystem\\ISPSystem\\ISPSystem.DomainEntities\\ISPSystem.DomainEntities.csproj": {
+              "projectPath": "C:\\projetos\\ISPSystem\\ISPSystem\\ISPSystem.DomainEntities\\ISPSystem.DomainEntities.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

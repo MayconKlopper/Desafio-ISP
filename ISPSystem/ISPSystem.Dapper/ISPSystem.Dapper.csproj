@@ -8,4 +8,9 @@
     <ProjectReference Include="..\ISPSystem.DomainEntities\ISPSystem.DomainEntities.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="QueryResources\" />
+    <Folder Include="ReadOnlyContexts\" />
+  </ItemGroup>
+
 </Project>

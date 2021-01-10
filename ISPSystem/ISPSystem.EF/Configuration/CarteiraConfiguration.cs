@@ -1,0 +1,28 @@
+﻿using ISPSystem.DomainEntities;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+
+namespace ISPSystem.EF.Configuration
+{
+    public class CarteiraConfiguration : IEntityTypeConfiguration<Carteira>
+    {
+        public void Configure(EntityTypeBuilder<Carteira> builder)
+        {
+            builder.ToTable("Carteira");
+
+            builder.HasKey(carteira => carteira.ID);
+
+            builder.Property(carteira => carteira.Composicao);
+            builder.Property(carteira => carteira.Descricao);
+
+            #region Relacionamentos
+
+            builder.HasOne(carteira => carteira.Perfil)
+                .WithOne(perfil => perfil.Carteira)
+                .HasForeignKey<Carteira>(carteira => carteira.PerfilID)
+                .HasConstraintName("FK_Carteira_Perfil");
+
+            #endregion
+        }
+    }
+}
