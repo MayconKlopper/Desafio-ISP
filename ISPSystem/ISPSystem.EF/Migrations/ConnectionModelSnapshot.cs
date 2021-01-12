@@ -70,6 +70,10 @@ namespace ISPSystem.EF.Migrations
                         .HasFilter("[PerfilID] IS NOT NULL");
 
                     b.ToTable("Participante");
+
+                    b.HasData(
+                        new { ID = 1, CarteiraID = 1, Idade = 25, Nome = "Maycon Klopper de Carvalho", PerfilID = 1 }
+                    );
                 });
 
             modelBuilder.Entity("ISPSystem.DomainEntities.Perfil", b =>
@@ -126,11 +130,41 @@ namespace ISPSystem.EF.Migrations
 
                     b.Property<string>("Mes");
 
+                    b.Property<decimal>("Porcentagem")
+                        .HasColumnType("decimal(18,3)");
+
                     b.HasKey("ID");
 
                     b.HasIndex("CarteiraID");
 
                     b.ToTable("Rentabilidade");
+
+                    b.HasData(
+                        new { ID = 1, Ano = 2020, CarteiraID = 1, Mes = "Janeiro", Porcentagem = -0.05m },
+                        new { ID = 2, Ano = 2020, CarteiraID = 1, Mes = "Fevereiro", Porcentagem = -0.07m },
+                        new { ID = 3, Ano = 2020, CarteiraID = 1, Mes = "Março", Porcentagem = -0.08m },
+                        new { ID = 4, Ano = 2020, CarteiraID = 1, Mes = "Abril", Porcentagem = -0.10m },
+                        new { ID = 5, Ano = 2020, CarteiraID = 1, Mes = "Maio", Porcentagem = 0.10m },
+                        new { ID = 6, Ano = 2020, CarteiraID = 1, Mes = "Junho", Porcentagem = 0.024m },
+                        new { ID = 7, Ano = 2020, CarteiraID = 1, Mes = "Julho", Porcentagem = 0.136m },
+                        new { ID = 8, Ano = 2020, CarteiraID = 1, Mes = "Agosto", Porcentagem = -0.035m },
+                        new { ID = 9, Ano = 2020, CarteiraID = 1, Mes = "Setembro", Porcentagem = -0.054m },
+                        new { ID = 10, Ano = 2020, CarteiraID = 1, Mes = "Outubro", Porcentagem = 0.03m },
+                        new { ID = 11, Ano = 2020, CarteiraID = 1, Mes = "Novembro", Porcentagem = 0.07m },
+                        new { ID = 12, Ano = 2020, CarteiraID = 1, Mes = "Dezembro", Porcentagem = 0.08m },
+                        new { ID = 13, Ano = 2020, CarteiraID = 2, Mes = "Janeiro", Porcentagem = -0.14m },
+                        new { ID = 14, Ano = 2020, CarteiraID = 2, Mes = "Fevereiro", Porcentagem = -0.16m },
+                        new { ID = 15, Ano = 2020, CarteiraID = 2, Mes = "Março", Porcentagem = -0.086m },
+                        new { ID = 16, Ano = 2020, CarteiraID = 2, Mes = "Abril", Porcentagem = -0.102m },
+                        new { ID = 17, Ano = 2020, CarteiraID = 2, Mes = "Maio", Porcentagem = 0.02m },
+                        new { ID = 18, Ano = 2020, CarteiraID = 2, Mes = "Junho", Porcentagem = 0.038m },
+                        new { ID = 19, Ano = 2020, CarteiraID = 2, Mes = "Julho", Porcentagem = 0.266m },
+                        new { ID = 20, Ano = 2020, CarteiraID = 2, Mes = "Agosto", Porcentagem = -0.065m },
+                        new { ID = 21, Ano = 2020, CarteiraID = 2, Mes = "Setembro", Porcentagem = -0.084m },
+                        new { ID = 22, Ano = 2020, CarteiraID = 2, Mes = "Outubro", Porcentagem = 0.06m },
+                        new { ID = 23, Ano = 2020, CarteiraID = 2, Mes = "Novembro", Porcentagem = 0.16m },
+                        new { ID = 24, Ano = 2020, CarteiraID = 2, Mes = "Dezembro", Porcentagem = 0.145m }
+                    );
                 });
 
             modelBuilder.Entity("ISPSystem.DomainEntities.Solicitacao", b =>

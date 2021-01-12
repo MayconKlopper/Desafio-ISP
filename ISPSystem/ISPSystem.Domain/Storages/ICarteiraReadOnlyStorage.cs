@@ -1,12 +1,15 @@
 ﻿using ISPSystem.DomainEntities;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace ISPSystem.Domain.Storages
 {
     public interface ICarteiraReadOnlyStorage
     {
+        Carteira Get(int ID);
+        Carteira GetWithRelationShip(int ID);
         IList<Carteira> Get();
+        IList<Carteira> GetWithRelationShip();
+
+        IList<Rentabilidade> GetRentabilidade(int carteiraID);
     }
 }

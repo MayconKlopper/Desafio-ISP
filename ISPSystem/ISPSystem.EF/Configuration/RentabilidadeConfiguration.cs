@@ -14,6 +14,8 @@ namespace ISPSystem.EF.Configuration
 
             builder.Property(rentabilidade => rentabilidade.Ano);
             builder.Property(rentabilidade => rentabilidade.Mes);
+            builder.Property(Rentabilidade => Rentabilidade.Porcentagem)
+                .HasColumnType("decimal(18,3)");
 
             #region Relacionamentos
 

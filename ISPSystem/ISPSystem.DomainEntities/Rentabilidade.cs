@@ -8,6 +8,7 @@ namespace ISPSystem.DomainEntities
         public int CarteiraID { get; set; }
         public int Ano { get; set; }
         public string Mes { get; set; }
+        public decimal Porcentagem { get; set; }
 
         #region Relacionamentos
 

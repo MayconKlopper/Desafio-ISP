@@ -16,11 +16,35 @@ namespace ISPSystem.EF.Contexts
 
         }
 
-        public IList<Solicitacao> GetSolicitacoes(int ID)
+        public IList<Participante> Get()
+        {
+            return this.connection.Participante
+                       .AsNoTracking()
+                       .ToList();
+        }
+
+        public Participante Get(int ID)
+        {
+            return this.connection.Participante
+                       .AsNoTracking()
+                       .FirstOrDefault(participante => participante.ID == ID);
+        }
+
+        public Participante GetWithRelationShip(int ID)
+        {
+            return this.connection.Participante
+                       .Include(participante => participante.Carteira)
+                        .ThenInclude(carteira => carteira.Rentabilidades)
+                       .Include(participante => participante.Perfil)
+                       .AsNoTracking()
+                       .FirstOrDefault(participante => participante.ID == ID);
+        }
+
+        public IList<Solicitacao> GetSolicitacoes(int participanteID)
         {
             return this.connection.Solicitacao
                     .AsNoTracking()
-                    .Where(solicitacao => solicitacao.ParticipanteID == ID)
+                    .Where(solicitacao => solicitacao.ParticipanteID == participanteID)
                     .ToList();
         }
 

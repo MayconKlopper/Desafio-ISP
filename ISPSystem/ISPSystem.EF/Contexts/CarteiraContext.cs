@@ -22,5 +22,36 @@ namespace ISPSystem.EF.Contexts
                     .AsNoTracking()
                     .ToList();
         }
+
+        public IList<Carteira> GetWithRelationShip()
+        {
+            return this.connection.Carteira
+                    .Include(carteira => carteira.Rentabilidades)
+                    .AsNoTracking()
+                    .ToList();
+        }
+
+        public Carteira Get(int ID)
+        {
+            return this.connection.Carteira
+                    .AsNoTracking()
+                    .FirstOrDefault(carteira => carteira.ID == ID);
+        }
+
+        public Carteira GetWithRelationShip(int ID)
+        {
+            return this.connection.Carteira
+                    .Include(carteira => carteira.Rentabilidades)
+                    .AsNoTracking()
+                    .FirstOrDefault(carteira => carteira.ID == ID);
+        }
+
+        public IList<Rentabilidade> GetRentabilidade(int carteiraID)
+        {
+            return this.connection.Rentabilidade
+                    .AsNoTracking()
+                    .Where(rentabilidade => rentabilidade.CarteiraID == carteiraID)
+                    .ToList();
+        }
     }
 }
