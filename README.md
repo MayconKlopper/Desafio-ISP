@@ -16,3 +16,4 @@
 ### Configurar a connectionString no web.config no projeto ISPSystem.WebAPI. O Banco de dados está em um arquivo.mdf no projeto ISPSystem.EF/DataBase
 ### Abrir o NUGET Package Console, no console, setar o projeto Padrão como ISPSystem.EF
 ### rodar o comando update-database
+### projeto está configurado para rodar na porta 44321 https://localhost:44321
