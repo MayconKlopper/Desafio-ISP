@@ -1,4 +1,4 @@
-﻿
+﻿using System.Collections.Generic;
 
 namespace ISPSystem.DomainEntities
 {
@@ -11,7 +11,7 @@ namespace ISPSystem.DomainEntities
         #region Relacionamentos
 
         public Participante Participante { get; set; }
-        public Carteira Carteira { get; set; }
+        public ICollection<Carteira> Carteiras { get; set; }
 
         #endregion
     }

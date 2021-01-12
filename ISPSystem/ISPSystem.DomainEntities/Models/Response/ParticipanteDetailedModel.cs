@@ -5,6 +5,7 @@ namespace ISPSystem.DomainEntities.Models.Response
 {
     public class ParticipanteDetailedModel
     {
+        public int? ID { get; set; }
         public string Nome { get; set; }
         public int Idade { get; set; }
         public string CarteiraComposicao { get; set; }
@@ -20,6 +21,7 @@ namespace ISPSystem.DomainEntities.Models.Response
             }
 
             var participanteDetailedModel = new ParticipanteDetailedModel();
+            participanteDetailedModel.ID = participante.ID;
             participanteDetailedModel.Nome = participante.Nome;
             participanteDetailedModel.Idade = participante.Idade;
             participanteDetailedModel.CarteiraComposicao = participante?.Carteira?.Composicao;

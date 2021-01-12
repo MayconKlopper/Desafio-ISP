@@ -1,5 +1,6 @@
 ﻿using ISPSystem.Domain.Services;
 using ISPSystem.Domain.Storages;
+using ISPSystem.DomainEntities.Models.Request;
 using ISPSystem.DomainEntities.Models.Response;
 using System;
 using System.Collections.Generic;
@@ -44,10 +45,36 @@ namespace ISPSystem.WebAPI.Controllers
             return model;
         }
 
-        // PUT: api/participante/1
-        public void Put(int id, [FromBody]string value)
+        // GET: api/participante/getSolicitacao?participanteID=1
+        [Route("api/participante/getSolicitacao")]
+        [HttpGet]
+        public IList<SolicitacaoModel> GetSolicitacao(int participanteID)
         {
+            IList<SolicitacaoModel> modelList = this.participanteReadOnlyStorage.GetSolicitacoes(participanteID)
+                                                    .Select(solicitacao => (SolicitacaoModel)solicitacao)
+                                                    .ToList();
 
+            return modelList;
+        }
+
+        // POST: api/participante/CalculatePerfil
+        [Route("api/participante/calculatePerfil")]
+        [HttpPost()]
+        public PerfilDetailedModel CalculatePerfil([FromBody]int pontuation)
+        {
+            PerfilDetailedModel perfil = this.participanteReadOnlyStorage.GetPerfilWithRelationShip(pontuation);
+
+            return perfil;
+        }
+
+        // POST: api/participante/CreateSolicitacao
+        [Route("api/participante/createSolicitacao")]
+        [HttpPost()]
+        public HttpResponseMessage CreateSolicitacao(CreateSolicitacaoModel createSolicitacaoModel)
+        {
+            this.participanteService.CreateSolicitacao(createSolicitacaoModel);
+
+            return new HttpResponseMessage(HttpStatusCode.Created);
         }
     }
 }

@@ -18,9 +18,10 @@ namespace ISPSystem.EF.Configuration
             #region Relacionamentos
 
             builder.HasOne(carteira => carteira.Perfil)
-                .WithOne(perfil => perfil.Carteira)
-                .HasForeignKey<Carteira>(carteira => carteira.PerfilID)
-                .HasConstraintName("FK_Carteira_Perfil");
+                .WithMany(perfil => perfil.Carteiras)
+                .HasForeignKey(carteira => carteira.PerfilID)
+                .HasConstraintName("FK_Carteira_Perfil")
+                .IsRequired();
 
             #endregion
         }

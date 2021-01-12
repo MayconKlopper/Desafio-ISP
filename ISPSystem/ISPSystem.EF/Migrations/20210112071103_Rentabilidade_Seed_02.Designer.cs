@@ -4,14 +4,16 @@ using ISPSystem.EF.Connections;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ISPSystem.EF.Migrations
 {
     [DbContext(typeof(Connection))]
-    partial class ConnectionModelSnapshot : ModelSnapshot
+    [Migration("20210112071103_Rentabilidade_Seed_02")]
+    partial class Rentabilidade_Seed_02
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -41,8 +43,7 @@ namespace ISPSystem.EF.Migrations
                         new { ID = 1, Composicao = "100% Renda Fixa", Descricao = "MAX Renda Fixa", PerfilID = 1 },
                         new { ID = 2, Composicao = "50% Renda Fixa e 50% Renda Variável", Descricao = "MIX Renda Fixa/Renda Variável", PerfilID = 2 },
                         new { ID = 3, Composicao = "100% Renda Variável", Descricao = "MAX Renda Variável", PerfilID = 3 },
-                        new { ID = 4, Composicao = "80% Renda Variável e 20% Criptomoeda", Descricao = "MIX Renda Variável/Criptomoeda", PerfilID = 3 },
-                        new { ID = 5, Composicao = "50% Poupança e 50% Tesouro SELIC simples", Descricao = "MIX Poupana/Tesouro SELIC", PerfilID = 4 }
+                        new { ID = 4, Composicao = "80% Renda Variável e 20% Criptomoeda", Descricao = "MIX Renda Variável/Criptomoeda", PerfilID = 3 }
                     );
                 });
 
@@ -92,10 +93,9 @@ namespace ISPSystem.EF.Migrations
                     b.ToTable("Perfil");
 
                     b.HasData(
-                        new { ID = 1, Descricao = "Conservador", Pontuacao = 15 },
+                        new { ID = 1, Descricao = "Conservador", Pontuacao = 20 },
                         new { ID = 2, Descricao = "Moderado", Pontuacao = 30 },
-                        new { ID = 3, Descricao = "Agressivo", Pontuacao = 40 },
-                        new { ID = 4, Descricao = "Ultra Conservador", Pontuacao = 0 }
+                        new { ID = 3, Descricao = "Agressivo", Pontuacao = 40 }
                     );
                 });
 

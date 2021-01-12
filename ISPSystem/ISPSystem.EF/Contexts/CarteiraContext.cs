@@ -2,10 +2,8 @@
 using ISPSystem.DomainEntities;
 using ISPSystem.EF.Connections;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace ISPSystem.EF.Contexts
 {
@@ -27,6 +25,7 @@ namespace ISPSystem.EF.Contexts
         {
             return this.connection.Carteira
                     .Include(carteira => carteira.Rentabilidades)
+                    .Include(carteira => carteira.Perfil)
                     .AsNoTracking()
                     .ToList();
         }
@@ -42,6 +41,7 @@ namespace ISPSystem.EF.Contexts
         {
             return this.connection.Carteira
                     .Include(carteira => carteira.Rentabilidades)
+                    .Include(carteira => carteira.Perfil)
                     .AsNoTracking()
                     .FirstOrDefault(carteira => carteira.ID == ID);
         }

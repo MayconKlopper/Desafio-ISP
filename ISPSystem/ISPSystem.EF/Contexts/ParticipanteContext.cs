@@ -52,5 +52,22 @@ namespace ISPSystem.EF.Contexts
         {
             this.connection.Solicitacao.Add(solicitacao);
         }
+
+        public IList<Questao> GetQuestionario()
+        {
+            return this.connection.Questao
+                    .AsNoTracking()
+                    .ToList();
+        }
+
+        public Perfil GetPerfilWithRelationShip(int pontuation)
+        {
+            return this.connection.Perfil
+                    .Include(perfil => perfil.Carteiras)
+                        .ThenInclude(carteira => carteira.Rentabilidades)
+                    .AsNoTracking()
+                    .OrderByDescending(perfil => perfil.Pontuacao)
+                    .FirstOrDefault(perfil => pontuation >= perfil.Pontuacao);
+        }
     }
 }

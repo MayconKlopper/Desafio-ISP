@@ -30,15 +30,18 @@ namespace ISPSystem.EF.Connections
             modelBuilder.ApplyConfiguration(new QuestaoConfiguration());
 
             modelBuilder.Entity<Perfil>().HasData(
-                new Perfil { ID = 1, Descricao = "Conservador", Pontuacao = 20 },
+                new Perfil { ID = 1, Descricao = "Conservador", Pontuacao = 15 },
                 new Perfil { ID = 2, Descricao = "Moderado", Pontuacao = 30 },
-                new Perfil { ID = 3, Descricao = "Agressivo", Pontuacao = 40 }
+                new Perfil { ID = 3, Descricao = "Agressivo", Pontuacao = 40 },
+                new Perfil { ID = 4, Descricao = "Ultra Conservador", Pontuacao = 0 }
                 );
 
             modelBuilder.Entity<Carteira>().HasData(
                 new Carteira { ID = 1, PerfilID = 1, Composicao = "100% Renda Fixa", Descricao = "MAX Renda Fixa" },
                 new Carteira { ID = 2, PerfilID = 2, Composicao = "50% Renda Fixa e 50% Renda Variável", Descricao = "MIX Renda Fixa/Renda Variável" },
-                new Carteira { ID = 3, PerfilID = 3, Composicao = "100% Renda Variável", Descricao = "MAX Renda Variável" }
+                new Carteira { ID = 3, PerfilID = 3, Composicao = "100% Renda Variável", Descricao = "MAX Renda Variável" },
+                new Carteira { ID = 4, PerfilID = 3, Composicao = "80% Renda Variável e 20% Criptomoeda", Descricao = "MIX Renda Variável/Criptomoeda" },
+                new Carteira { ID = 5, PerfilID = 4, Composicao = "50% Poupança e 50% Tesouro SELIC simples", Descricao = "MIX Poupana/Tesouro SELIC" }
                 );
 
             modelBuilder.Entity<Questao>().HasData(
@@ -73,7 +76,11 @@ namespace ISPSystem.EF.Connections
                 new Rentabilidade { ID = 21, CarteiraID = 2, Ano = 2020, Mes = "Setembro", Porcentagem = -0.084m },
                 new Rentabilidade { ID = 22, CarteiraID = 2, Ano = 2020, Mes = "Outubro", Porcentagem = 0.06m },
                 new Rentabilidade { ID = 23, CarteiraID = 2, Ano = 2020, Mes = "Novembro", Porcentagem = 0.16m },
-                new Rentabilidade { ID = 24, CarteiraID = 2, Ano = 2020, Mes = "Dezembro", Porcentagem = 0.145m }
+                new Rentabilidade { ID = 24, CarteiraID = 2, Ano = 2020, Mes = "Dezembro", Porcentagem = 0.145m },
+                new Rentabilidade { ID = 25, CarteiraID = 3, Ano = 2020, Mes = "Janeiro", Porcentagem = -0.234m },
+                new Rentabilidade { ID = 26, CarteiraID = 3, Ano = 2020, Mes = "Fevereiro", Porcentagem = -0.236m },
+                new Rentabilidade { ID = 27, CarteiraID = 4, Ano = 2020, Mes = "Janeiro", Porcentagem = 0.143m },
+                new Rentabilidade { ID = 28, CarteiraID = 4, Ano = 2020, Mes = "Fevereiro", Porcentagem = 0.165m }
                 );
 
             modelBuilder.Entity<Participante>().HasData(

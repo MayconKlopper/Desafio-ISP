@@ -6,7 +6,7 @@ namespace ISPSystem.DomainEntities.Enums
     {
         pendente = 1,
         aprovada,
-        concluída,
-        rejeitada,
+        concluida,
+        rejeitada
     }
 }

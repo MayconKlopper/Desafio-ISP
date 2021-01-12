@@ -9,5 +9,7 @@ namespace ISPSystem.Domain.Storages
         Participante Get(int ID);
         Participante GetWithRelationShip(int ID);
         IList<Solicitacao> GetSolicitacoes(int participanteID);
+        IList<Questao> GetQuestionario();
+        Perfil GetPerfilWithRelationShip(int pontuation);
     }
 }

@@ -4,14 +4,16 @@ using ISPSystem.EF.Connections;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ISPSystem.EF.Migrations
 {
     [DbContext(typeof(Connection))]
-    partial class ConnectionModelSnapshot : ModelSnapshot
+    [Migration("20210112065953_Alter_Table_Perfil_Solicitacao_AND_Seeds")]
+    partial class Alter_Table_Perfil_Solicitacao_AND_Seeds
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -41,8 +43,7 @@ namespace ISPSystem.EF.Migrations
                         new { ID = 1, Composicao = "100% Renda Fixa", Descricao = "MAX Renda Fixa", PerfilID = 1 },
                         new { ID = 2, Composicao = "50% Renda Fixa e 50% Renda Variável", Descricao = "MIX Renda Fixa/Renda Variável", PerfilID = 2 },
                         new { ID = 3, Composicao = "100% Renda Variável", Descricao = "MAX Renda Variável", PerfilID = 3 },
-                        new { ID = 4, Composicao = "80% Renda Variável e 20% Criptomoeda", Descricao = "MIX Renda Variável/Criptomoeda", PerfilID = 3 },
-                        new { ID = 5, Composicao = "50% Poupança e 50% Tesouro SELIC simples", Descricao = "MIX Poupana/Tesouro SELIC", PerfilID = 4 }
+                        new { ID = 4, Composicao = "80% Renda Variável e 20% Criptomoeda", Descricao = "MIX Renda Variável/Criptomoeda", PerfilID = 3 }
                     );
                 });
 
@@ -92,10 +93,9 @@ namespace ISPSystem.EF.Migrations
                     b.ToTable("Perfil");
 
                     b.HasData(
-                        new { ID = 1, Descricao = "Conservador", Pontuacao = 15 },
+                        new { ID = 1, Descricao = "Conservador", Pontuacao = 20 },
                         new { ID = 2, Descricao = "Moderado", Pontuacao = 30 },
-                        new { ID = 3, Descricao = "Agressivo", Pontuacao = 40 },
-                        new { ID = 4, Descricao = "Ultra Conservador", Pontuacao = 0 }
+                        new { ID = 3, Descricao = "Agressivo", Pontuacao = 40 }
                     );
                 });
 
@@ -165,11 +165,7 @@ namespace ISPSystem.EF.Migrations
                         new { ID = 21, Ano = 2020, CarteiraID = 2, Mes = "Setembro", Porcentagem = -0.084m },
                         new { ID = 22, Ano = 2020, CarteiraID = 2, Mes = "Outubro", Porcentagem = 0.06m },
                         new { ID = 23, Ano = 2020, CarteiraID = 2, Mes = "Novembro", Porcentagem = 0.16m },
-                        new { ID = 24, Ano = 2020, CarteiraID = 2, Mes = "Dezembro", Porcentagem = 0.145m },
-                        new { ID = 25, Ano = 2020, CarteiraID = 3, Mes = "Janeiro", Porcentagem = -0.234m },
-                        new { ID = 26, Ano = 2020, CarteiraID = 3, Mes = "Fevereiro", Porcentagem = -0.236m },
-                        new { ID = 27, Ano = 2020, CarteiraID = 4, Mes = "Janeiro", Porcentagem = 0.143m },
-                        new { ID = 28, Ano = 2020, CarteiraID = 4, Mes = "Fevereiro", Porcentagem = 0.165m }
+                        new { ID = 24, Ano = 2020, CarteiraID = 2, Mes = "Dezembro", Porcentagem = 0.145m }
                     );
                 });
 
